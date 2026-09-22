@@ -22,16 +22,27 @@ Deliverables: `README.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `EXECUTION_PLAN.md
 `STATUS.md`, `SECURITY.md`, QA structure (`qa/`). Acceptance: repo is a clear
 source of truth; public-exposure sign-off. No external systems.
 
-## Gate 2 — Inoreader Engine Design
-Deliverables (documented config, ready to apply — not yet applied):
-- Source set (`context/a2-sources.md` → `inoreader/SOURCES.md`), folder/tag scheme
-  (one per section), monitoring queries for Must-Catch + feedless Mauritius Tier-1.
-- Verify each `RSS ~` URL; prove FSC/EDB/MoF/FIU web-feed page-watch works.
-- Confirm the automated-report scheduler can pin Mon–Fri 08:15 UTC+4 (else use the
-  email-digest scheduler); confirm per-report article/length caps, folder cap,
-  monthly token headroom.
-- **FSC-communiqué injection acceptance test** ("zero regulator misses" positive).
-Acceptance: configuration validated and ready for live Inoreader setup.
+## Gate 2A — Inoreader Engine Design (documentation only, no external systems)
+Deliverables — configuration **documented, ready to apply** (nothing applied,
+no account required):
+- Source set (`context/a2-sources.md` → `inoreader/SOURCES.md`).
+- Folder/tag scheme (one per section) — `inoreader/folders.md`.
+- Monitoring-query design for Must-Catch + feedless Mauritius Tier-1 —
+  `inoreader/monitoring-queries.md`.
+- Exclusions/noise config to encode in the prompt (from `context/a2-noise-lessons.md`).
+- Automated-report input design: prompt-source scoping, article-cap intent,
+  intended schedule (Mon–Fri 08:15 UTC+4).
+Acceptance: config is fully specified on paper and internally consistent, ready to
+apply once an account exists. **No live claims.**
+
+## Gate 2B — Live Setup & Verification (requires subscription/auth)
+Runs **only after** the Inoreader subscription + account access exist (payment/auth
+gate). Verifies what cannot be proven from documentation:
+- Each `RSS ~` URL resolves; **FSC/EDB/MoF/FIU Web feeds / page-watch actually work**.
+- Automated-report **scheduler precision** (Mon–Fri 08:15 UTC+4) or email-digest fallback.
+- **Report / article / token limits** and monthly headroom.
+- **Known-FSC-communiqué capture test** ("zero regulator misses" positive).
+Acceptance: live engine confirmed against the Gate 2A design.
 
 ## Gate 3 — AI Digest Quality
 Deliverables: single master prompt (`digest/PROMPT.md`) implementing

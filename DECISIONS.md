@@ -78,9 +78,15 @@ Format per entry: Decision · Reason · Date · Status · Reopen only if.
   allowed for ad-hoc deeper research only, not routine production.
 - **Date:** 2026-09-22 · **Status:** LOCKED · **Reopen only if:** proven blocker.
 
-### D10 — Preferred production platform: Inoreader (pending Gate 0 validation)
-- **Decision:** Inoreader Team Intelligence is the assumed collection + AI-report
-  + distribution platform. Assumption MUST be validated against current official
-  documentation in Gate 0 before any external configuration.
-- **Date:** 2026-09-22 · **Status:** PROVISIONAL (confirm at Gate 0)
-- **Reopen only if:** Gate 0 evidence shows it cannot meet requirements simply.
+### D10 — Preferred production platform: Inoreader Pro + Intelligence capability
+- **Decision:** The preferred v1 platform is **Inoreader Pro + the Intelligence
+  capability/add-on** (collection + one automated Intelligence report + native
+  email delivery), subject to **live purchase/setup verification** (Gate 2B).
+  **Team Intelligence only if Pro cannot satisfy a demonstrated requirement.**
+- **Reason:** Email-only architecture (D6) removes any need for a Team plan; Pro
+  supports monitoring feeds, web-feeds/page-watch, custom-prompt automated reports,
+  and multi-recipient email.
+- **Date:** 2026-09-22 (updated post-Gate-0; supersedes the earlier Team
+  Intelligence assumption) · **Status:** LOCKED (plan target)
+- **Reopen only if:** Gate 2B/live verification shows Pro cannot meet a
+  demonstrated requirement (then evaluate Team Intelligence).
