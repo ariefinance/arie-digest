@@ -1,10 +1,10 @@
 # STATUS.md — ARIE Digest
 
-**Current gate:** Gate 0 — Independent Architecture Review (in progress)
+**Current gate:** Gate 0 — Independent Architecture Review (COMPLETE, awaiting user review)
 **Last updated:** 2026-09-22
 
 ## Gate progress
-- [ ] **Gate 0** Architecture Review — validate assumptions, no external changes → `ARCHITECTURE_REVIEW.md`
+- [x] **Gate 0** Architecture Review — APPROVE (proceed to Gate 1). See `ARCHITECTURE_REVIEW.md`. No external changes made.
 - [ ] Gate 1 Repository / Governance
 - [ ] Gate 2 Inoreader Engine Design
 - [ ] Gate 3 AI Digest Quality (prompt + adversarial QA)
@@ -13,11 +13,20 @@
 - [ ] Gate 6 Production Lock (finalise, archive legacy, repo → private)
 
 ## Active workstreams
-- **A1 Platform/Inoreader** — validating capabilities/cost via official docs.
-- **A2 Source Intelligence** — curating sources + harvesting legacy repo.
+- (none active — A1 and A2 completed and terminated)
+
+## Gate 0 outcome (summary)
+- Inoreader validated as viable (Pro + Intelligence / Team Intelligence).
+- Delivery: **Email = baseline** (no first-party Teams path); Teams tested at Gate 4 but unlikely to win.
+- Zero-stale must be **prompt-enforced** (C1); dedupe on **event identity** (C2).
+- Headline risk: **FSC Mauritius + MoF/EDB/FIU have no feed** → monitoring query + page-watch + Gate-2 acceptance test.
+- Numeric items (prices/quotas/limits) snippet-sourced — confirm on live pages at purchase/Gate 2.
 
 ## Open blockers
-- (none yet — Gate 0 in progress)
+- (none — Gate 0 complete)
+
+## Open items carried forward
+- O1 confirm live prices (payment step) · O2 schedule precision (Gate 2) · O3 verify `RSS ~` + page-watch (Gate 2) · O4 report/token caps (Gate 2) · O5 FSC injection test (Gate 2/3)
 
 ## Approval gates for user
 - Gate 0 review (upcoming) · Gate 4 delivery confirmation · Gate 6 production lock.
