@@ -10,7 +10,6 @@
 - [x] **Gate 3** AI Digest Quality — `digest/PROMPT.md`, `digest/format.md`, `qa/fixtures/`, `qa/QA_RESULTS.md`. Adversarial QA run (1 FAIL + 9 weaknesses found; all remediated). Docs/QA only.
 - [ ] Gate 2B Live Setup & Verification (requires subscription/auth — deferred until account exists)
 - [ ] Gate 4 Email Delivery Proof (email only — Teams removed from v1)
-- [ ] Gate 4 Email Delivery Proof (email only — Teams removed from v1)
 - [ ] Gate 5 Live Pilot (5–10 business days)
 - [ ] Gate 6 Production Lock (finalise, archive legacy, repo → private)
 

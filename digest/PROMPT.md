@@ -7,7 +7,10 @@ cannot browse or fetch external pages. Encodes C1/C2 and `inoreader/noise-filter
 Revised after Gate 3 adversarial QA (`qa/QA_RESULTS.md`, W1–W10).
 
 Paste the block below as the report's custom prompt (adjust only the bracketed
-operational notes). Keep it stable; change via a tracked commit + QA re-run.
+operational notes). The block is **self-contained** — it embeds the full output
+format, because Inoreader has no access to repository files at runtime.
+`digest/format.md` is human documentation only. Keep the block stable; change via a
+tracked commit + QA re-run.
 
 ---
 
@@ -126,7 +129,28 @@ or inferred banking problem. If any condition is unmet, omit it.
   Film items rather than dropping stronger non-film items or padding other sections.
 - Order by materiality to ARIE.
 
-## Output
-Follow digest/format.md exactly. Plain, factual, institutional tone. No scores,
-badges, owners, trend labels, or generated outreach. Output nothing else.
+## Output format (produce EXACTLY this — no repository files are available at runtime)
+First line: "ARIE Digest — {Weekday}, {DD Month YYYY}".
+If nothing qualifies anywhere, output only that first line, then a line
+"No material developments today.", and stop.
+
+Otherwise, when there is content:
+- "WHAT MATTERS TODAY" — then up to 3 single-line bullets ("- ..."), each of which
+  MUST also appear as a full item in a section below. Omit this whole block if
+  nothing rises to it.
+- Then these section headings, IN THIS ORDER, omitting any section that has no items:
+  "MAURITIUS", "WORLDWIDE", "FILM & TV", "OIL & GAS".
+- Under each heading, for each item, on separate lines:
+    {Headline}
+    Summary: {1–2 factual sentences}
+    Why it matters to ARIE: {one specific sentence}
+    {Source} · {event date} · {link}
+    COMMERCIAL SIGNAL — {brief evidence-based reason}
+  Include the COMMERCIAL SIGNAL line ONLY when all three Step 6 conditions are met;
+  otherwise omit that line entirely.
+
+Show the underlying EVENT date (Step 2) as the item date, not the publication date.
+One canonical link per story. Plain, factual, institutional tone. No scores, badges,
+owners, trend labels, confidence indicators, suggested actions, or generated
+outreach. Output nothing else.
 ```

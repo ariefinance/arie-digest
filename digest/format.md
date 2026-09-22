@@ -64,12 +64,25 @@ Why it matters to ARIE: ARIE holds an FSC payment-intermediary licence, so revis
 conditions may change its compliance obligations directly.
 FSC Mauritius · 22 Sep 2026 · {link}
 
+WORLDWIDE
+Company C opens treasury operations across three African markets
+Summary: Company C announced new foreign operations in three African markets, stating
+it will run multi-currency treasury and cross-border settlement for the new offices.
+Why it matters to ARIE: A named company standing up foreign multi-currency treasury is
+the kind of cross-border payments need ARIE serves.
+Company C newsroom · 22 Sep 2026 · {link}
+COMMERCIAL SIGNAL — Company C (named) is establishing new foreign operations and the
+release explicitly cites multi-currency treasury and cross-border settlement.
+
 OIL & GAS
 OFAC designates additional tankers in shadow-fleet action
 Summary: OFAC added several tankers to its SDN list over sanctioned-oil transport.
 Why it matters to ARIE: Tightened tanker sanctions raise payment-screening and
-counterparty risk on oil-trade corridors ARIE may serve.
+counterparty risk on oil-trade corridors relevant to ARIE's cross-border payments work.
 OFAC · 22 Sep 2026 · {link}
-COMMERCIAL SIGNAL — named designations create cross-border payment-compliance demand
-among affected traders.
 ```
+
+The OFAC item carries **no** COMMERCIAL SIGNAL — a sanctions action is not a named
+company with an explicit payments element, so it fails the strict 3-condition gate.
+The Company C item shows a compliant signal (named entity + new foreign operation +
+explicit multi-currency-treasury/settlement element stated in the source).

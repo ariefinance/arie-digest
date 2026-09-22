@@ -173,9 +173,12 @@ Step 4's include list.
 5. **Volume/section balance is advisory.** "~5–10", "≤12", "Film ≤25%", "WMT ≤3" are soft
    targets a single pass approximates; it cannot guarantee global optimality across a
    batch it processes once (D2 single-pass, by design).
-6. **No cross-day memory.** The pass cannot know what yesterday's digest already carried,
-   so a slow-developing story can recur on consecutive days despite C1 — acceptable under
-   V1 scope (D5), but a real limit.
+6. **Limited cross-day memory.** The *AI pass* has no semantic memory of what prior
+   digests carried, so a rewritten/evolving story can recur on consecutive days.
+   Inoreader's **native exact/near-duplicate filter** provides limited cross-day
+   suppression (same URL / near-identical title, multi-day lookback), but a
+   semantically-rewritten recurrence of an evolving story can still pass and must be
+   watched in the Gate 5 pilot.
 
 ---
 
