@@ -1,5 +1,10 @@
 # A1 — Inoreader Platform Findings (Gate 0)
 
+> **Superseded note (2026-09-22):** this is the original Gate 0 evidence record,
+> kept intact. Delivery is now **email only** (see `DECISIONS.md` D6 — Teams
+> removed from v1). Any Teams discussion below (§2, §4) is historical context, not
+> a live recommendation; do not act on it.
+
 Access date for all items: **2026-09-22**.
 
 > **Evidence caveat (read first).** The egress proxy blocks `www.inoreader.com`,

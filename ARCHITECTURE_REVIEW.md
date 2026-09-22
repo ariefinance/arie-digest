@@ -43,34 +43,24 @@ Confirmed capabilities (feature existence, high confidence):
 → **D1/D9 (no custom code, no extra tools): HOLD.** Nothing found requires a
 backend, DB, scraper, or orchestration platform.
 
-## 2. Delivery — Teams preferred, Email fallback/control (D6, amended)
+## 2. Delivery — Email only (D6, LOCKED by user)
 
-**Business context (user):** all intended ARIE management/team users already have
-and use Microsoft Teams internally. Delivering into Teams therefore adds **no new
-management application or user behaviour** — so **Teams is the preferred surface**
-and **Email is the fallback/control path.**
+**Decision (user, locked):** **Email is the sole management delivery surface for
+v1.** Microsoft Teams is **removed entirely** from the architecture, delivery
+tests, acceptance gates, and future execution — no challenger comparison. This
+removes an entire branch of complexity (no Team-tier plan dependency, no Teams
+admin consent, no orchestration connector, fewer failure points).
 
-**Finding (per user's check of current official docs):** a **first-party
-Inoreader→Microsoft Teams path exists** on **Team plans** — Team plans include
-Teams integration, Team channels can send articles to Teams, and **Rules can
-trigger on a newly generated Intelligence report and send it to a Team channel.**
-(A1's earlier "no first-party path" statement was proxy-blocked-snippet-based and
-too strong — retracted.)
+**Native path used:** Inoreader's first-party **automated email delivery** of the
+Intelligence report to chosen recipients — zero extra orchestration, first-party,
+weekday+time scheduling confirmed. The one operational nuance: email-digest
+recipients must **accept** a subscription request once (verified at Gate 4).
 
-**Gate 4 approves Teams ONLY if** the complete native flow — Automated
-Intelligence Report → Team channel → Microsoft Teams — works cleanly, needs **no
-additional orchestration platform** (no Power Automate / Make / Zapier / custom
-connector), and any **Microsoft admin requirement is acceptable**. If any of
-those fail, fall back to Email. Still tested, not assumed.
+**Out of scope for v1 (do not research/configure/test):** Inoreader→Teams
+integration, Teams channels, Teams webhooks, Teams Workflows, Power Automate /
+Make / Zapier / custom connectors for delivery.
 
-**Two dependencies to keep explicit:**
-- **Plan:** Teams delivery is a **Team / Team Intelligence** feature. Existing
-  Teams *access* does **not** mean ARIE holds the required Inoreader subscription
-  — validate the Inoreader plan requirement and its cost **separately** at the
-  payment gate (see §5). This is the main cost/complexity factor Teams carries
-  over an email-only Pro setup.
-- **Admin:** the Inoreader↔Teams connection may need a Microsoft admin consent —
-  acceptability to be confirmed at Gate 4.
+**Gate 4 becomes Email Delivery Proof** — see §Execution / EXECUTION_PLAN.md.
 
 ## 3. Two mandatory design conditions
 
@@ -105,24 +95,18 @@ surfaces** before go-live. Also: BoM's own feed is dominated by routine ops
 
 ## 5. Cost shape (verify live before purchase — payment gate)
 
-- **Minimum viable:** **Pro** (~US$90/yr annual, snippet-sourced) **+ the
-  Intelligence automated-report capability** (stated as a Pro/Custom add-on;
-  add-on price UNCONFIRMED). A single Pro account can email the digest to several
-  managers, so multi-recipient does **not** by itself force a team tier.
-- **Team / Team Intelligence** (team-size brackets) — required if the first-party
-  **Teams** delivery route (§2) is pursued, since Teams integration is a Team-plan
-  feature. Confirmed official 3-member pricing: **Team US$44.99/mo**, **Team
-  Intelligence US$64.99/mo** (Intelligence bundles ~6M tokens/member). This is the
-  cost premium Teams delivery would carry over an email-only Pro setup — a factor
-  for the Gate-4 decision.
+- **Target tier (email-only, D6):** **Pro** (~US$90/yr annual, snippet-sourced)
+  **+ the Intelligence automated-report capability** (stated as a Pro/Custom
+  add-on; add-on price UNCONFIRMED). A single Pro account can **email** the digest
+  to several managers, so multi-recipient does **not** force a team tier — and with
+  Teams removed (D6) there is no reason to buy a Team plan for v1.
 - **Token quota watch:** Pro bundles ~1M Intelligence tokens/month; daily
   weekday reports over scoped article sets should fit but must be monitored.
   BYOAI (own API key) exists but reintroduces a "separate API" that D9 rules out
   of production — **not** recommended as default; keep bundled tokens.
 
-**Recommendation:** start on **Pro + Intelligence add-on**; escalate to Team
-Intelligence only if a demonstrated need appears. Confirm all figures on the live
-pricing page at the purchase step.
+**Recommendation:** **Pro + Intelligence add-on** is the target plan. Confirm the
+add-on price and all figures on the live pricing page at the purchase step.
 
 ## 6. Metrics realism (adjustment to §28 targets)
 

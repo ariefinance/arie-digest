@@ -68,7 +68,13 @@ it affects regulation, payments, banking, cross-border commerce, customers,
 counterparties, corridors, competitors, Film/TV payment activity or Oil & Gas
 trade/payment risk?" If weak → REJECT. Empty sections beat weak content.
 
+## Delivery (LOCKED, v1)
+Sole management delivery surface = **Email** (automated Inoreader Intelligence
+report emailed to management recipients). Microsoft Teams is **out of scope for
+v1** — do not research, configure, or test any Teams path. Pipeline:
+`Curated Sources → Inoreader → One Automated Intelligence Report → ARIE Digest → Management Email`.
+
 ## Governance
 Repo is temporarily PUBLIC. Everything committed must be safe for permanent
-public exposure. Never commit secrets, private feed URLs, Teams/management
-emails, tenant info, client/KYC data, or confidential prospects. Use placeholders.
+public exposure. Never commit secrets, private feed URLs, management emails,
+tenant info, client/KYC data, or confidential prospects. Use placeholders.

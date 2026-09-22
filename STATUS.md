@@ -1,14 +1,14 @@
 # STATUS.md — ARIE Digest
 
-**Current gate:** Gate 0 — Independent Architecture Review (COMPLETE, awaiting user review)
+**Current gate:** Gate 1 — Repository / Governance (governance scaffolding complete); Gate 0 PR #1 open for review
 **Last updated:** 2026-09-22
 
 ## Gate progress
-- [x] **Gate 0** Architecture Review — APPROVE (proceed to Gate 1). See `ARCHITECTURE_REVIEW.md`. No external changes made.
-- [ ] Gate 1 Repository / Governance
+- [x] **Gate 0** Architecture Review — APPROVE. See `ARCHITECTURE_REVIEW.md`. No external changes made.
+- [x] **Gate 1** Repository / Governance — README, ARCHITECTURE, DECISIONS, EXECUTION_PLAN, STATUS, SECURITY, qa/ scaffolding in place. Public-exposure safe.
 - [ ] Gate 2 Inoreader Engine Design
 - [ ] Gate 3 AI Digest Quality (prompt + adversarial QA)
-- [ ] Gate 4 Delivery Proof (email baseline vs Teams challenger)
+- [ ] Gate 4 Email Delivery Proof (email only — Teams removed from v1)
 - [ ] Gate 5 Live Pilot (5–10 business days)
 - [ ] Gate 6 Production Lock (finalise, archive legacy, repo → private)
 
@@ -17,7 +17,7 @@
 
 ## Gate 0 outcome (summary)
 - Inoreader validated as viable (Pro + Intelligence / Team Intelligence).
-- Delivery (D6 amended): **Teams = preferred** (users already in Teams, no new app/behaviour); **Email = fallback/control.** First-party Team-channel→Teams path exists (Team plan); full report→Teams flow/formatting/admin unproven → Gate 4. Validate Inoreader Team plan requirement + cost separately.
+- Delivery (D6 LOCKED): **Email is the sole v1 surface.** Microsoft Teams removed entirely (no challenger, no Team-plan dependency). Pipeline: Curated Sources → Inoreader → One Automated Intelligence Report → ARIE Digest → Management Email. Target plan: Pro + Intelligence add-on.
 - Zero-stale must be **prompt-enforced** (C1); dedupe on **event identity** (C2).
 - Headline risk: **FSC Mauritius + MoF/EDB/FIU have no feed** → monitoring query + page-watch + Gate-2 acceptance test.
 - Numeric items (prices/quotas/limits) snippet-sourced — confirm on live pages at purchase/Gate 2.
