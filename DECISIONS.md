@@ -41,14 +41,24 @@ Format per entry: Decision · Reason · Date · Status · Reopen only if.
   Digest proves reliable.
 - **Date:** 2026-09-22 · **Status:** LOCKED · **Reopen only if:** post-pilot decision.
 
-### D6 — Delivery surface decided empirically (Email = baseline, Teams = challenger)
-- **Decision:** Email is the baseline/control path. Teams is the challenger.
-  Teams wins ONLY if the live proof (Gate 4) demonstrates equal or lower
-  operational complexity, acceptable management formatting, and no unnecessary
-  admin/orchestration dependency. Not pre-locked either way. No Make.com / Power
-  Automate / Teams Workflows introduced merely to force a surface.
-- **Reason:** Preserve empirical decision; avoid orchestration creep.
-- **Date:** 2026-09-22 · **Status:** LOCKED (process) · **Reopen only if:** Gate 4 evidence.
+### D6 — Delivery surface: Teams preferred, Email fallback/control (proven at Gate 4)
+- **Decision:** **Microsoft Teams is the preferred delivery surface**, because all
+  intended ARIE management/team users already have and use Teams internally, so it
+  introduces **no new management application or user behaviour**. **Email is the
+  fallback/control path.** Teams is approved ONLY if the **native Inoreader
+  Team-channel → Microsoft Teams** integration (Automated Intelligence Report →
+  Team channel → Teams) works cleanly, requires **no additional orchestration
+  platform**, and any **Microsoft admin requirement is acceptable**. If any of
+  those fail at Gate 4, fall back to Email. Not pre-locked — Gate 4 proves it.
+- **Constraints:** (a) Do **not** introduce Power Automate / Make / Zapier /
+  custom connectors merely to force Teams. (b) Existing Teams *access* does **not**
+  imply ARIE holds the required Inoreader **Team / Team Intelligence** subscription
+  (Teams delivery is a Team-plan feature) — validate the Inoreader plan requirement
+  and cost **separately** (payment gate).
+- **Reason:** Deliver where management already works; avoid orchestration creep;
+  keep the plan-cost dependency explicit.
+- **Date:** 2026-09-22 (amended per user business context) · **Status:** LOCKED
+  (process) · **Reopen only if:** Gate 4 evidence.
 
 ### D7 — Legacy repo: harvest then archive
 - **Decision:** `ariefinance/arie-intelligence-command-centre` (public) is a

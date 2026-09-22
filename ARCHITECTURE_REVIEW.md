@@ -43,27 +43,34 @@ Confirmed capabilities (feature existence, high confidence):
 → **D1/D9 (no custom code, no extra tools): HOLD.** Nothing found requires a
 backend, DB, scraper, or orchestration platform.
 
-## 2. Delivery — Email is the baseline; a first-party Teams path exists and is the Gate-4 challenger
+## 2. Delivery — Teams preferred, Email fallback/control (D6, amended)
 
-**Corrected finding (per user's independent check of current official docs):**
-a **first-party Inoreader→Microsoft Teams path does exist** on **Team plans** —
-Team plans include Microsoft Teams integration, Team channels can send articles
-to Microsoft Teams, and **Rules can trigger on a newly generated Intelligence
-report and send it to a Team channel.** (A1's earlier "no first-party path"
-statement was based on proxy-blocked snippets and was too strong — retracted.)
+**Business context (user):** all intended ARIE management/team users already have
+and use Microsoft Teams internally. Delivering into Teams therefore adds **no new
+management application or user behaviour** — so **Teams is the preferred surface**
+and **Email is the fallback/control path.**
 
-**Correct conclusion:** the *component* first-party path exists, but the
-**complete flow — Automated Intelligence Report → Team channel → Microsoft
-Teams — plus its formatting, authentication/admin requirements, and operational
-simplicity — is unproven and must be tested at Gate 4.** Note this path implies a
-**Team-tier plan** (see §5), which is a cost/complexity factor to weigh there.
+**Finding (per user's check of current official docs):** a **first-party
+Inoreader→Microsoft Teams path exists** on **Team plans** — Team plans include
+Teams integration, Team channels can send articles to Teams, and **Rules can
+trigger on a newly generated Intelligence report and send it to a Team channel.**
+(A1's earlier "no first-party path" statement was proxy-blocked-snippet-based and
+too strong — retracted.)
 
-**D6 is unchanged and not pre-locked:** Email = baseline/control; Teams =
-challenger. Gate 4 runs the empirical proof and Teams wins only on equal-or-lower
-operational complexity with acceptable management formatting and no unnecessary
-admin/orchestration dependency. We test rather than assume; we do not introduce a
-third-party connector (Make/Zapier/Power Automate) to force Teams — but the
-first-party Team-channel route is a legitimate contender to evaluate.
+**Gate 4 approves Teams ONLY if** the complete native flow — Automated
+Intelligence Report → Team channel → Microsoft Teams — works cleanly, needs **no
+additional orchestration platform** (no Power Automate / Make / Zapier / custom
+connector), and any **Microsoft admin requirement is acceptable**. If any of
+those fail, fall back to Email. Still tested, not assumed.
+
+**Two dependencies to keep explicit:**
+- **Plan:** Teams delivery is a **Team / Team Intelligence** feature. Existing
+  Teams *access* does **not** mean ARIE holds the required Inoreader subscription
+  — validate the Inoreader plan requirement and its cost **separately** at the
+  payment gate (see §5). This is the main cost/complexity factor Teams carries
+  over an email-only Pro setup.
+- **Admin:** the Inoreader↔Teams connection may need a Microsoft admin consent —
+  acceptability to be confirmed at Gate 4.
 
 ## 3. Two mandatory design conditions
 

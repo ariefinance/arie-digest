@@ -17,7 +17,7 @@
 
 ## Gate 0 outcome (summary)
 - Inoreader validated as viable (Pro + Intelligence / Team Intelligence).
-- Delivery: **Email = baseline; Teams = challenger.** A first-party Team-channel→Teams path exists (Team plan); the full report→Teams flow/formatting/admin is unproven → tested at Gate 4.
+- Delivery (D6 amended): **Teams = preferred** (users already in Teams, no new app/behaviour); **Email = fallback/control.** First-party Team-channel→Teams path exists (Team plan); full report→Teams flow/formatting/admin unproven → Gate 4. Validate Inoreader Team plan requirement + cost separately.
 - Zero-stale must be **prompt-enforced** (C1); dedupe on **event identity** (C2).
 - Headline risk: **FSC Mauritius + MoF/EDB/FIU have no feed** → monitoring query + page-watch + Gate-2 acceptance test.
 - Numeric items (prices/quotas/limits) snippet-sourced — confirm on live pages at purchase/Gate 2.
