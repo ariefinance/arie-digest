@@ -56,10 +56,15 @@ fundraising and generic crypto speculation are rejected (brief).
   new. If no in-batch evidence fixes the event date, **reject** (do not present as
   new). Do not infer a date, and do not imply the report can verify it externally.
 - **C2 event-identity dedupe:** same event across publishers = one story. Merge only
-  when items share a **specific event anchor** (named body + specific event word,
-  e.g. "FATF plenary", "AMLA appointment") **AND** date proximity (~3 days) **AND**
-  modest token overlap. **Never** merge on a generic regulator name alone (two firms
-  each getting an FSC licence are two stories).
+  when items share a **specific event anchor** — a named body (an abbreviation and its
+  full name are the same body, e.g. "AMLA" = "EU anti-money-laundering authority") + a
+  specific event word (e.g. "FATF plenary", "AMLA appointment", "X acquires Y") **AND**
+  date proximity (~3 days). The **specific subject entity must also match** — never
+  merge on a regulator/body name plus a generic event word alone (two firms each
+  getting an FSC licence, or each facing an FSC action, are separate stories). Token
+  overlap is a supporting hint only, never a requirement (differently-worded reports of
+  the same event must still merge). This mirrors `digest/PROMPT.md` Step 3 — keep them
+  in sync.
 
 ## G. Grounding (zero unsupported claims)
 Entity names and facts must appear **literally** in the item title/summary — do not

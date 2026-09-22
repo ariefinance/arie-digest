@@ -1,17 +1,24 @@
 # STATUS.md — ARIE Digest
 
-**Current gate:** Gate 2A — Inoreader Engine Design (docs complete, in review)
+**Current gate:** Gate 3 — AI Digest Quality (prompt + QA complete, in review)
 **Last updated:** 2026-09-22
 
 ## Gate progress
 - [x] **Gate 0** Architecture Review — APPROVED at independent review. Closed (PR #1 squash-merged `6b34797`).
 - [x] **Gate 1** Repository / Governance — governance set in place. Closed (PR #1).
-- [x] **Gate 2A** Inoreader Engine Design — `inoreader/SOURCES.md`, `folders.md`, `monitoring-queries.md`, `noise-filters.md`, `report-config.md`. Docs/config only, no external systems touched.
-- [ ] Gate 2B Live Setup & Verification (requires subscription/auth)
-- [ ] Gate 3 AI Digest Quality (prompt + adversarial QA)
+- [x] **Gate 2A** Inoreader Engine Design — sources/folders/queries/noise/report design. Closed (PR #2 squash-merged `ad55884`).
+- [x] **Gate 3** AI Digest Quality — `digest/PROMPT.md`, `digest/format.md`, `qa/fixtures/`, `qa/QA_RESULTS.md`. Adversarial QA run (1 FAIL + 9 weaknesses found; all remediated). Docs/QA only.
+- [ ] Gate 2B Live Setup & Verification (requires subscription/auth — deferred until account exists)
+- [ ] Gate 4 Email Delivery Proof (email only — Teams removed from v1)
 - [ ] Gate 4 Email Delivery Proof (email only — Teams removed from v1)
 - [ ] Gate 5 Live Pilot (5–10 business days)
 - [ ] Gate 6 Production Lock (finalise, archive legacy, repo → private)
+
+## Gate 3 outcome (summary)
+- Master prompt (`digest/PROMPT.md`) implements the single pass; output format in `digest/format.md`.
+- 14 adversarial fixtures; QA agent found 1 FAIL (over-eager Commercial Signal) + 9 weaknesses — all fixed except W8 (accepted residual, watch in pilot).
+- Key hardening: C1 recency window + same-day-event rule; grounding vs ARIE-relevance contradiction resolved; Commercial Signal cond. 3 requires an explicit payments element; C2 subject-entity match + abbreviation=full-name; Film-cap and WMT coupling clarified.
+- Residual limits (single, no-browsing pass) documented in `qa/QA_RESULTS.md` §3 — for Gate 5 pilot tracking.
 
 ## Active workstreams
 - (none active — Gate 2A synthesised from A2 research, no new sub-agents; A1/A2 terminated)

@@ -4,6 +4,7 @@ The single custom prompt for the Inoreader Automated Intelligence Report over
 `00-Digest-Input`. One AI pass (D2): reject → dedupe/group → classify → summarise →
 explain ARIE relevance → prioritise. It sees **only the supplied articles** — it
 cannot browse or fetch external pages. Encodes C1/C2 and `inoreader/noise-filters.md`.
+Revised after Gate 3 adversarial QA (`qa/QA_RESULTS.md`, W1–W10).
 
 Paste the block below as the report's custom prompt (adjust only the bracketed
 operational notes). Keep it stable; change via a tracked commit + QA re-run.
@@ -43,25 +44,30 @@ Reject:
 - Generic chatter that only matches a topic keyword: generic AI/SaaS/hardware,
   generic fundraising, generic crypto speculation. Require a SPECIFIC observable
   trigger, not just a topic word.
-- Film: casting, celebrity, box-office/ratings.
+- Film: items that are ONLY casting, celebrity, or box-office/ratings (keep if a
+  material production/incentive/finance/jurisdiction development is also present).
 - Oil & Gas: bare oil-price movement, generic exploration.
 
 ## Step 2 — DATE DISCIPLINE (C1) — do this before keeping anything
 The underlying EVENT date governs freshness, not the feed/index/publication/
-syndication date. Treat an event as current only if its date is evidenced within the
-supplied articles (the item itself, or a corroborating supplied article). If the
-event clearly happened long ago and is merely being republished/resurfaced, REJECT.
-If you cannot establish the event is recent from the supplied text, REJECT rather
-than present it as new. Do not infer a date; do not claim you verified anything
-externally.
+syndication date. An action, issuance, launch, appointment, or announcement dated
+within the article body IS an evidenced event date even when it coincides with the
+publication date; only a bare feed/index timestamp with no in-body event is
+non-probative. Treat an event as current only if it is evidenced as occurring within
+roughly the last few days (since the previous weekday digest; Monday covers the
+weekend). If it is older than that, or is merely being republished/resurfaced, or you
+cannot establish recency from the supplied text, REJECT rather than present it as new.
+Do not infer a date; do not claim you verified anything externally.
 
 ## Step 3 — DEDUPE / GROUP (C2)
-Same event across publishers = ONE story. Merge items only when they share a
-specific event anchor (a named body + a specific event word, e.g. "FATF plenary",
-"AMLA appointment", "X acquires Y") AND are within ~3 days. NEVER merge on a generic
-regulator name alone — two different firms each getting an FSC licence are two
-stories. Keep the strongest/most primary source as the link; note corroboration
-exists if relevant.
+Same event across publishers = ONE story. Merge items only when they share a specific
+event anchor — a named body (treat an abbreviation and its full name as the same body,
+e.g. "AMLA" = "EU anti-money-laundering authority") + a specific event word, e.g.
+"FATF plenary", "AMLA appointment", "X acquires Y" — AND are within ~3 days. NEVER
+merge on a regulator/body name plus a generic event word alone — the specific subject
+entity must also match. Two different firms each getting an FSC licence, or each facing
+an FSC action, are separate stories. Keep the strongest/most primary source as the
+link; note corroboration exists if relevant.
 
 ## Step 4 — CLASSIFY into sections
 - Mauritius — FSC, Bank of Mauritius, Ministry of Finance, EDB, FIU, local
@@ -89,10 +95,13 @@ For each kept item write:
 - Headline (concise, factual).
 - Summary: 1–2 factual sentences, only facts present in the supplied text.
 - Why it matters to ARIE: ONE specific sentence.
-Entity names and facts must appear literally in the supplied text — do NOT infer. If
-you cannot ground a field in the supplied data, leave it empty rather than guess. No
-promises about onboarding, FX pricing, or returns. No suggested actions; "monitor"
-is not an action.
+Entity names and facts about the news event must appear literally in the supplied text
+— do NOT invent article facts; if a summary/headline fact is not in the text, omit it
+rather than guess. The "Why it matters to ARIE" sentence may connect those stated facts
+to ARIE's known business (the persona above), but must not assert unstated facts about
+ARIE's own corridors, clients, or operations (e.g. do not imply ARIE already serves a
+market unless stated). No promises about onboarding, FX pricing, or returns. No
+suggested actions; "monitor" is not an action.
 
 ## Step 6 — COMMERCIAL SIGNAL (optional annotation, strict)
 Add "COMMERCIAL SIGNAL — [brief evidence-based reason]" to an item ONLY if ALL three
@@ -100,17 +109,21 @@ hold, all evidenced in the supplied text: (1) a named company/entity; (2) a spec
 observable trigger (international expansion, new market entry, new foreign operation,
 international acquisition, major international contract, relevant licence, fundraising
 explicitly tied to international activity, or documented banking/payment difficulty);
-(3) a credible ARIE cross-border/payments angle supported by the evidence. Never add
-a score, contact, outreach suggestion, or inferred banking problem. If any condition
-is unmet, omit it.
+(3) an explicit payment, treasury, FX, settlement, correspondent-banking, or documented
+banking-difficulty element stated in the supplied text (the activity merely being
+cross-border does NOT satisfy this). Never add a score, contact, outreach suggestion,
+or inferred banking problem. If any condition is unmet, omit it.
 
 ## Step 7 — PRIORITISE + VOLUME
 - "What Matters Today": at most 3 bullets — the developments management would most
-  regret not knowing. May repeat items covered below.
+  regret not knowing. Each must also appear as a full item in one of the four sections
+  below.
 - Then the four sections in order: Mauritius, Worldwide, Film & TV, Oil & Gas. Omit a
   section that has no qualifying items.
 - Total volume: ~5–10 on a normal day; 2–4 quiet; 0 acceptable (say "No material
-  developments today"); ~12 max on a busy day. Film ≤25% of items.
+  developments today"); ~12 max on a busy day. Film should not dominate: aim for ≤25%
+  of items on a multi-item day; if Film would exceed that, keep only the most material
+  Film items rather than dropping stronger non-film items or padding other sections.
 - Order by materiality to ARIE.
 
 ## Output
