@@ -43,7 +43,10 @@ OIL & GAS
 - **Date shown = underlying event date** (per C1). If only a publication date is
   evidenced and the event date cannot be established, the item should have been
   rejected upstream — do not display it.
-- **Volume:** normally ≤10 items total; ~12 max on a busy day; Film ≤25% of items.
+- **Volume:** normally ≤10 items total; ~12 max on a busy day. Film should not dominate:
+  aim for ≤25% of items on multi-item days; if Film would exceed that, keep only the
+  most material Film items rather than dropping stronger non-Film items or padding
+  other sections.
 - **Links:** one canonical/most-primary link per story (deduped per C2).
 - **No** prospect scores, suggested contacts, owners, actions, or "monitor".
 
