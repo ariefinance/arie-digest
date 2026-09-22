@@ -50,8 +50,8 @@ the report prompt, not here): `context/a2-noise-lessons.md`.
 | Source | URL | Feed |
 |---|---|---|
 | Screen Ireland (news) | https://www.screenireland.ie/news | RSS ~ → page-watch/query if no feed |
-| NZ Film Commission | https://www.nzfilm.co.nz/news | RSS ~ → page-watch/query |
-| Netherlands Film Fund | https://www.filmfonds.nl/en/news | RSS ~ → page-watch/query |
+| NZ Film Commission | https://www.nzfilm.co.nz/ | RSS ~ → page-watch/query (use homepage/Spotlight surface) |
+| Netherlands Film Fund | https://www.filmfonds.nl/en/updates | RSS ~ → page-watch/query |
 | Norwegian Film Commission | https://www.norwegianfilm.com/news | RSS ~ → page-watch/query |
 | Mauritius film incentive (EDB) | edbmauritius.org/newsroom | RSS ✖ → MQ-FILM-MU + page-watch |
 

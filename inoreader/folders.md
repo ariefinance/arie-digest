@@ -34,6 +34,7 @@ visible sections at summarisation time. `90-Discovery` is deliberately excluded 
 - `commercial-signal-candidate` — optional; items that may meet the D4 test (the
   report still applies the strict 3-condition guardrail; the tag is only a hint).
 - `mauritius-tier1` — FSC/BoM/MoF/EDB/FIU items (elevate for "zero regulator misses").
+- `arie-direct-mention` — direct "ARIE Finance" / "Arie Capital Investment" mentions (MQ-MC-ARIE).
 
 ## Report ingestion scope
 The Automated Intelligence Report reads the single folder **`00-Digest-Input`**.
@@ -51,7 +52,7 @@ confirmed at Gate 2B.
 
 ## Rules (Inoreader "Rules", ≤ plan limit)
 - Add each eligible feed/query to its section folder (01–05) **and** to `00-Digest-Input`.
-- Apply `competitor` / `mauritius-tier1` / `commercial-signal-candidate` tags by matching the curated entity lists.
+- Apply `competitor` / `mauritius-tier1` / `commercial-signal-candidate` / `arie-direct-mention` tags by matching the curated entity lists.
 - No webhook/Teams rules (D6 — email only). No rule that deletes items (the report
   does rejection, not the collection layer — keep hygiene reversible; the duplicate
   filter suppresses, it does not delete).

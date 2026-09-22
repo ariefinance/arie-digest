@@ -33,10 +33,18 @@ Hardware"; "Fintech firm raises Series B to expand AI product". Generic fintech
 fundraising and generic crypto speculation are rejected (brief).
 
 ## E. Sector-specific noise
-- **Film:** reject casting/celebrity/box-office. A film item earns prominence only
-  with a **payment/treasury/FX/escrow/settlement/repatriation/rebate-documentation/
-  production-accounting/payroll/multi-currency** angle. Cap film at **≤25%** of output.
-- **Oil & Gas:** reject bare oil-price chatter and generic exploration. Keep only
+- **Film:** reject casting/celebrity/box-office. **Include material production /
+  incentive / finance / jurisdiction developments** — new international productions,
+  incentive/rebate changes, production-finance changes, major studio/production-company
+  or shooting-jurisdiction moves — **even when the article does not literally mention
+  payments** (these are in the approved Film scope). A payment/treasury/FX/escrow/
+  settlement/repatriation/rebate-documentation/payroll/multi-currency angle raises an
+  item toward "What Matters" and is required for a `COMMERCIAL SIGNAL`, but is **not**
+  a precondition for inclusion. Cap film at **≤25%** of output.
+- **Oil & Gas:** reject bare oil-price chatter and generic exploration. **Include**
+  material refinery/LNG/project developments, acquisitions, supply agreements,
+  trading-infrastructure changes, and cross-border corridor developments **where
+  there is credible ARIE transaction/commercial relevance** — alongside the core
   physical trading + trade finance + sanctions/payment restriction + shipping.
 
 ## F. Freshness & duplication (C1/C2 — load-bearing)

@@ -32,11 +32,17 @@ Narrowly scoped discovery of a **named company + observable international trigge
 (D4 condition 1+2). These only *surface candidates*; the report still applies the
 strict 3-condition D4 guardrail (named entity + specific trigger + evidenced ARIE
 payments angle) and rejects anything unproven. Keep to two queries (avoid a prospect
-engine, D4).
-- **MQ-CS-EXPANSION:** `(company OR firm OR group OR "Ltd" OR "Limited") AND ("expands into" OR "enters the" OR "new market" OR "opens office" OR "sets up operations" OR "international expansion" OR "cross-border") AND (Africa OR India OR "Middle East" OR Mauritius OR Europe OR Asia)`
-- **MQ-CS-DEALS:** `(acquires OR acquisition OR "major contract" OR "wins contract" OR "secures licence" OR "raises" ) AND (international OR "cross-border" OR overseas OR foreign) AND (payment OR treasury OR FX OR trade)`
+engine, D4). **Anti-flood:** no generic entity-type prefix — anchor on the specific
+trigger phrase + geography + a relevance qualifier so these cannot crowd out Tier-1
+items inside the 30–40 cap.
+- **MQ-CS-EXPANSION:** `("expands into" OR "enters the" OR "new market" OR "opens office" OR "sets up operations" OR "international expansion") AND (Africa OR India OR "Middle East" OR Mauritius) AND (payment OR treasury OR FX OR "cross-border" OR banking OR trade)`
+- **MQ-CS-DEALS:** `(acquires OR acquisition OR "major contract" OR "wins contract" OR "secures licence") AND (international OR "cross-border" OR overseas OR foreign) AND (payment OR treasury OR FX OR trade)`
 
-## Direct ARIE mention watch → `05-Must-Catch`, tag `mauritius-tier1`
+**Gate-2B acceptance check:** if the commercial-signal feeds generate excessive daily
+volume/noise, **tighten them or move them out of always-on `00-Digest-Input`** —
+do NOT raise the article cap to compensate.
+
+## Direct ARIE mention watch → `05-Must-Catch`, tag `arie-direct-mention`
 - **MQ-MC-ARIE:** `"ARIE Finance" OR "Arie Capital Investment"`  ← direct mention watch (moved out of Discovery so it always reaches the report). Bare `ACBM` dropped as a standalone term — too ambiguous.
 
 ## Film & TV → `03-Film`
