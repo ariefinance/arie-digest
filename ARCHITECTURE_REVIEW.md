@@ -43,19 +43,27 @@ Confirmed capabilities (feature existence, high confidence):
 → **D1/D9 (no custom code, no extra tools): HOLD.** Nothing found requires a
 backend, DB, scraper, or orchestration platform.
 
-## 2. Delivery — Email baseline strongly supported; Teams unlikely to win Gate 4
+## 2. Delivery — Email is the baseline; a first-party Teams path exists and is the Gate-4 challenger
 
-**Decisive finding: there is NO first-party Inoreader→Teams path for the AI
-report.** Every Teams route requires an external connector (webhook rule into a
-Teams incoming webhook, or Make/Zapier/Power Automate) **plus likely Teams admin
-action** — precisely the orchestration/admin dependency D6 and D9 rule against.
+**Corrected finding (per user's independent check of current official docs):**
+a **first-party Inoreader→Microsoft Teams path does exist** on **Team plans** —
+Team plans include Microsoft Teams integration, Team channels can send articles
+to Microsoft Teams, and **Rules can trigger on a newly generated Intelligence
+report and send it to a Team channel.** (A1's earlier "no first-party path"
+statement was based on proxy-blocked snippets and was too strong — retracted.)
 
-Per your amendment #1, D6 is **not pre-locked**: Email is the baseline/control,
-Teams remains the challenger, and Gate 4 still runs the empirical proof. But on
-current evidence Teams **cannot beat email on "equal-or-lower operational
-complexity with no unnecessary admin/orchestration"** — so Gate 4 is expected to
-confirm email. We test rather than assume; we do not introduce a connector merely
-to keep Teams alive.
+**Correct conclusion:** the *component* first-party path exists, but the
+**complete flow — Automated Intelligence Report → Team channel → Microsoft
+Teams — plus its formatting, authentication/admin requirements, and operational
+simplicity — is unproven and must be tested at Gate 4.** Note this path implies a
+**Team-tier plan** (see §5), which is a cost/complexity factor to weigh there.
+
+**D6 is unchanged and not pre-locked:** Email = baseline/control; Teams =
+challenger. Gate 4 runs the empirical proof and Teams wins only on equal-or-lower
+operational complexity with acceptable management formatting and no unnecessary
+admin/orchestration dependency. We test rather than assume; we do not introduce a
+third-party connector (Make/Zapier/Power Automate) to force Teams — but the
+first-party Team-channel route is a legitimate contender to evaluate.
 
 ## 3. Two mandatory design conditions
 
@@ -94,8 +102,12 @@ surfaces** before go-live. Also: BoM's own feed is dominated by routine ops
   Intelligence automated-report capability** (stated as a Pro/Custom add-on;
   add-on price UNCONFIRMED). A single Pro account can email the digest to several
   managers, so multi-recipient does **not** by itself force a team tier.
-- **Team Intelligence** (team-size brackets, e.g. ~US$65–170/mo for 3–10 members;
-  6M tokens/member) only if shared channels / collaborative curation is wanted.
+- **Team / Team Intelligence** (team-size brackets) — required if the first-party
+  **Teams** delivery route (§2) is pursued, since Teams integration is a Team-plan
+  feature. Confirmed official 3-member pricing: **Team US$44.99/mo**, **Team
+  Intelligence US$64.99/mo** (Intelligence bundles ~6M tokens/member). This is the
+  cost premium Teams delivery would carry over an email-only Pro setup — a factor
+  for the Gate-4 decision.
 - **Token quota watch:** Pro bundles ~1M Intelligence tokens/month; daily
   weekday reports over scoped article sets should fit but must be monitored.
   BYOAI (own API key) exists but reintroduces a "separate API" that D9 rules out
