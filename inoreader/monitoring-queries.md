@@ -27,6 +27,18 @@ Verify counts/refresh at Gate 2B (Pro allows ~30 monitoring feeds — ample).
 ## Competitor watch → `05-Must-Catch`, tag `competitor`
 - **MQ-WW-COMPET:** `(Wise OR Revolut OR Airwallex OR Payoneer OR Nium OR Rapyd OR Stripe OR Adyen OR "AfrAsia" OR "Bank One" OR "Absa Mauritius") AND (licence OR expansion OR acquisition OR partnership OR corridor OR "cross-border" OR outage OR fine)`
 
+## Commercial-signal candidates → `05-Must-Catch`, tag `commercial-signal-candidate`
+Narrowly scoped discovery of a **named company + observable international trigger**
+(D4 condition 1+2). These only *surface candidates*; the report still applies the
+strict 3-condition D4 guardrail (named entity + specific trigger + evidenced ARIE
+payments angle) and rejects anything unproven. Keep to two queries (avoid a prospect
+engine, D4).
+- **MQ-CS-EXPANSION:** `(company OR firm OR group OR "Ltd" OR "Limited") AND ("expands into" OR "enters the" OR "new market" OR "opens office" OR "sets up operations" OR "international expansion" OR "cross-border") AND (Africa OR India OR "Middle East" OR Mauritius OR Europe OR Asia)`
+- **MQ-CS-DEALS:** `(acquires OR acquisition OR "major contract" OR "wins contract" OR "secures licence" OR "raises" ) AND (international OR "cross-border" OR overseas OR foreign) AND (payment OR treasury OR FX OR trade)`
+
+## Direct ARIE mention watch → `05-Must-Catch`, tag `mauritius-tier1`
+- **MQ-MC-ARIE:** `"ARIE Finance" OR "Arie Capital Investment"`  ← direct mention watch (moved out of Discovery so it always reaches the report). Bare `ACBM` dropped as a standalone term — too ambiguous.
+
 ## Film & TV → `03-Film`
 - **MQ-FILM-INCENTIVE:** `film AND (rebate OR "tax incentive" OR "cash rebate") AND (change OR increase OR cap OR launch) `
 - **MQ-FILM-FINANCE:** `"production finance" OR "completion bond" OR "gap financing" OR "co-production treaty"`
@@ -37,6 +49,8 @@ Verify counts/refresh at Gate 2B (Pro allows ~30 monitoring feeds — ample).
 - **MQ-OG-SHIPPING:** `(tanker OR "shadow fleet" OR "dark fleet") AND (sanction OR designation OR insurance)`
 - **MQ-OG-PROJECT:** `(Africa OR "Middle East") AND (refinery OR LNG OR "oil terminal") AND (project OR financing OR payment)`
 
-## Discovery (broad) → `90-Discovery` (must not dominate output)
-- **MQ-DISC-ARIE:** `"Arie Finance" OR ACBM OR "cross-border payment intermediary Mauritius"`  ← direct mention watch
-- Kept intentionally few; the report treats Discovery as lowest-trust and rejects aggressively.
+## Discovery (broad) → `90-Discovery` (NOT in report input by default)
+- **MQ-DISC-CBPAY:** `"cross-border payment intermediary" Mauritius OR "payment service provider" Mauritius licence`  ← broad sector discovery
+- Kept intentionally few. `90-Discovery` is excluded from `00-Digest-Input`; promote
+  a query into the input only if it proves its worth. (Direct ARIE-mention watch was
+  moved to Must-Catch above so it always reaches the report.)

@@ -40,10 +40,13 @@ fundraising and generic crypto speculation are rejected (brief).
   physical trading + trade finance + sanctions/payment restriction + shipping.
 
 ## F. Freshness & duplication (C1/C2 — load-bearing)
-- **C1 event-date rejection:** reject any item whose **underlying event date** is
-  not evidenced in the item text; feed/index/syndication dates are non-probative;
-  old news republished today is not new. Missing date ≠ auto-reject, but must be
-  corroborated before use.
+- **C1 event-date rejection:** the report sees only the articles in the selected
+  input — it cannot fetch an external primary source. It may treat an underlying
+  **event date as established only when that date is evidenced within the selected
+  input articles** (the item itself, or a corroborating article in the same batch).
+  Feed/index/syndication dates are non-probative; old news republished today is not
+  new. If no in-batch evidence fixes the event date, **reject** (do not present as
+  new). Do not infer a date, and do not imply the report can verify it externally.
 - **C2 event-identity dedupe:** same event across publishers = one story. Merge only
   when items share a **specific event anchor** (named body + specific event word,
   e.g. "FATF plenary", "AMLA appointment") **AND** date proximity (~3 days) **AND**

@@ -5,11 +5,18 @@ here are the intended configuration to apply at Gate 2B** — nothing is verifie
 against a live account yet (article caps, token headroom, scheduler precision are
 UNCONFIRMED until Gate 2B).
 
-## One report, combined scope (D2)
-- **Ingestion scope:** parent covering folders `01-Mauritius`, `02-Global-Finance`,
-  `03-Film`, `04-Oil-Gas`, `05-Must-Catch`. Discovery (`90`) excluded by default.
+## One report, single-source input (D2)
+- **Ingestion source:** the single folder **`00-Digest-Input`**. An Inoreader
+  automated report selects ONE source (feed, folder, tag, or channel) — there is no
+  parent/multi-folder scope — so every eligible feed and monitoring feed from 01–05
+  is also added to `00-Digest-Input` (see `folders.md`). Discovery (`90`) is not in it.
+- **Pre-AI native duplicate filter:** a conservative duplicate filter runs on
+  `00-Digest-Input` before the report (same URL / same-or-near-identical title,
+  multi-day lookback ~3 days, up to Inoreader's max ~1 month) to cut token waste and
+  cross-day syndication. Semantic event-identity dedupe for rewritten headlines stays
+  in the AI prompt (C2). Filter is *safe* (suppress, not delete).
 - **Rationale:** one combined pass is simplest and most token-efficient (D2). Split
-  per-section only if Gate 3 quality demands it.
+  into per-section reports (each pointed at a section folder) only if Gate 3 demands it.
 
 ## Schedule (intended — confirm mechanism at Gate 2B)
 - **Weekdays, 08:15 Mauritius time (UTC+4)** (D8); Monday's window includes the
@@ -19,10 +26,11 @@ UNCONFIRMED until Gate 2B).
   emptiness. Decide at Gate 2B against live capability.
 
 ## Input volume
-- **Article cap per run:** intended **~60–80** most-recent items across scope as the
-  starting point ("a smaller focused set produces more accurate insights"). Exact
-  max and any output-length cap are UNCONFIRMED — tune at Gate 2B against the token
-  quota (Pro ~1M tokens/month; ~22 weekday runs/month).
+- **Article cap per run:** start at **~30–40** most-recent items (Inoreader
+  recommends smaller focused sets for more reliable reports, and this matches the
+  ≤10-story output). Increase only if Gate 3/2B shows material misses. Exact max and
+  any output-length cap are UNCONFIRMED — tune at Gate 2B against the token quota
+  (Pro ~1M tokens/month; ~22 weekday runs/month).
 - **Time window:** last ~24h weekdays; ~72h for Monday. (Event-date discipline C1
   still governs freshness regardless of window.)
 

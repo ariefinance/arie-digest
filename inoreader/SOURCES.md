@@ -46,12 +46,24 @@ the report prompt, not here): `context/a2-noise-lessons.md`.
 | The Banker / Global Finance / Central Banking | resp. sites | RSS ~ (correspondent banking / de-risking) |
 
 ### Film & TV → folder `03-Film`
+**Primary/official (accessible — preferred evidence for incentive/production-finance):**
 | Source | URL | Feed |
 |---|---|---|
-| Screen Daily | https://www.screendaily.com/ | RSS ~ (GNews proxy backup) |
-| Variety / THR (business & finance only) | resp. sites | RSS ~ (filter hard: reject casting/box-office) |
-| KFTV / incentive trackers | https://www.kftv.com/ | RSS ✖ → query |
-| Mauritius film incentive (EDB) | edbmauritius.org/newsroom | RSS ✖ → MQ-FILM-MU |
+| Screen Ireland (news) | https://www.screenireland.ie/news | RSS ~ → page-watch/query if no feed |
+| NZ Film Commission | https://www.nzfilm.co.nz/news | RSS ~ → page-watch/query |
+| Netherlands Film Fund | https://www.filmfonds.nl/en/news | RSS ~ → page-watch/query |
+| Norwegian Film Commission | https://www.norwegianfilm.com/news | RSS ~ → page-watch/query |
+| Mauritius film incentive (EDB) | edbmauritius.org/newsroom | RSS ✖ → MQ-FILM-MU + page-watch |
+
+**Trade press (discovery / corroboration only — NOT sole evidence; many paywalled):**
+| Source | URL | Feed |
+|---|---|---|
+| Screen Daily | https://www.screendaily.com/ | RSS ~ (GNews proxy backup) — corroboration |
+| Variety / THR (business & finance only) | resp. sites | RSS ~ (reject casting/box-office) — corroboration |
+| KFTV / incentive trackers | https://www.kftv.com/ | RSS ✖ → query — discovery |
+
+An incentive/rebate or production-finance change should be grounded on an official
+source where one exists; trade press corroborates but is not sole evidence.
 
 ### Oil & Gas → folder `04-Oil-Gas`
 | Source | URL | Feed |
