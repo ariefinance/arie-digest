@@ -1,12 +1,12 @@
 # STATUS.md — ARIE Digest
 
-**Current gate:** Gate 0–1 approved (independent review) subject to cleanup; entering Gate 2A
+**Current gate:** Gate 2A — Inoreader Engine Design (docs complete, in review)
 **Last updated:** 2026-09-22
 
 ## Gate progress
-- [x] **Gate 0** Architecture Review — APPROVED at independent review. See `ARCHITECTURE_REVIEW.md`. No external changes made.
-- [x] **Gate 1** Repository / Governance — README, ARCHITECTURE, DECISIONS, EXECUTION_PLAN, STATUS, SECURITY, qa/ in place. Public-exposure safe. Approved at independent review.
-- [ ] Gate 2A Inoreader Engine Design (docs only — no external systems)
+- [x] **Gate 0** Architecture Review — APPROVED at independent review. Closed (PR #1 squash-merged `6b34797`).
+- [x] **Gate 1** Repository / Governance — governance set in place. Closed (PR #1).
+- [x] **Gate 2A** Inoreader Engine Design — `inoreader/SOURCES.md`, `folders.md`, `monitoring-queries.md`, `noise-filters.md`, `report-config.md`. Docs/config only, no external systems touched.
 - [ ] Gate 2B Live Setup & Verification (requires subscription/auth)
 - [ ] Gate 3 AI Digest Quality (prompt + adversarial QA)
 - [ ] Gate 4 Email Delivery Proof (email only — Teams removed from v1)
@@ -14,7 +14,7 @@
 - [ ] Gate 6 Production Lock (finalise, archive legacy, repo → private)
 
 ## Active workstreams
-- (none active — A1 and A2 completed and terminated)
+- (none active — Gate 2A synthesised from A2 research, no new sub-agents; A1/A2 terminated)
 
 ## Gate 0 outcome (summary)
 - Inoreader validated as viable. Target plan: **Pro + Intelligence add-on** (D10); Team Intelligence only if Pro can't meet a demonstrated need.
