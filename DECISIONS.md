@@ -41,14 +41,24 @@ Format per entry: Decision · Reason · Date · Status · Reopen only if.
   Digest proves reliable.
 - **Date:** 2026-09-22 · **Status:** LOCKED · **Reopen only if:** post-pilot decision.
 
-### D6 — Delivery surface decided empirically (Email = baseline, Teams = challenger)
-- **Decision:** Email is the baseline/control path. Teams is the challenger.
-  Teams wins ONLY if the live proof (Gate 4) demonstrates equal or lower
-  operational complexity, acceptable management formatting, and no unnecessary
-  admin/orchestration dependency. Not pre-locked either way. No Make.com / Power
-  Automate / Teams Workflows introduced merely to force a surface.
-- **Reason:** Preserve empirical decision; avoid orchestration creep.
-- **Date:** 2026-09-22 · **Status:** LOCKED (process) · **Reopen only if:** Gate 4 evidence.
+### D6 — Email is the sole management delivery surface (v1); Teams removed
+- **Decision:** **Email is the ONLY management delivery surface for ARIE Digest
+  v1.** The automated Inoreader Intelligence report is emailed to management
+  recipients. **Microsoft Teams is removed entirely from v1** — architecture,
+  delivery tests, acceptance gates, and future execution tasks. There is no
+  challenger comparison.
+- **Do NOT research, configure, or test:** Inoreader→Teams integration; Teams
+  channels; Teams webhooks; Teams Workflows; Power Automate (or Make/Zapier/custom
+  connectors) for Digest delivery.
+- **Production pipeline:** `Curated Sources → Inoreader → One Automated
+  Intelligence Report → ARIE Digest → Management Email`.
+- **Gate 4 = Email Delivery Proof** (tests only: automated report email delivery;
+  multiple management recipients; formatting/readability; links; scheduling;
+  reliability; whether recipient acceptance/activation is required).
+- **Reason:** Direct user decision. Removes an entire branch of complexity,
+  reducing setup effort and ongoing failure points.
+- **Date:** 2026-09-22 (locked by user; supersedes prior Teams-preferred framing)
+  · **Status:** LOCKED · **Reopen only if:** the user explicitly requests Teams later.
 
 ### D7 — Legacy repo: harvest then archive
 - **Decision:** `ariefinance/arie-intelligence-command-centre` (public) is a
@@ -68,9 +78,15 @@ Format per entry: Decision · Reason · Date · Status · Reopen only if.
   allowed for ad-hoc deeper research only, not routine production.
 - **Date:** 2026-09-22 · **Status:** LOCKED · **Reopen only if:** proven blocker.
 
-### D10 — Preferred production platform: Inoreader (pending Gate 0 validation)
-- **Decision:** Inoreader Team Intelligence is the assumed collection + AI-report
-  + distribution platform. Assumption MUST be validated against current official
-  documentation in Gate 0 before any external configuration.
-- **Date:** 2026-09-22 · **Status:** PROVISIONAL (confirm at Gate 0)
-- **Reopen only if:** Gate 0 evidence shows it cannot meet requirements simply.
+### D10 — Preferred production platform: Inoreader Pro + Intelligence capability
+- **Decision:** The preferred v1 platform is **Inoreader Pro + the Intelligence
+  capability/add-on** (collection + one automated Intelligence report + native
+  email delivery), subject to **live purchase/setup verification** (Gate 2B).
+  **Team Intelligence only if Pro cannot satisfy a demonstrated requirement.**
+- **Reason:** Email-only architecture (D6) removes any need for a Team plan; Pro
+  supports monitoring feeds, web-feeds/page-watch, custom-prompt automated reports,
+  and multi-recipient email.
+- **Date:** 2026-09-22 (updated post-Gate-0; supersedes the earlier Team
+  Intelligence assumption) · **Status:** LOCKED (plan target)
+- **Reopen only if:** Gate 2B/live verification shows Pro cannot meet a
+  demonstrated requirement (then evaluate Team Intelligence).
