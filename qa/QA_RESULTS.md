@@ -205,3 +205,118 @@ recency window; F05 merge and F06 split both explicitly supported; F01/F10/F12/F
 relevance sentences now permitted without breaking grounding). The **residual
 limitations in §3 remain true** — they are inherent to a single, no-browsing pass and
 are accepted for V1, to be watched in the Gate 5 pilot.
+
+---
+
+## 5. Round 2 — actual re-test of the self-contained prompt
+
+**Scope of this round.** Independent RE-TEST of the FINAL revised prompt. The unit under
+test is ONLY the fenced `text` block inside `digest/PROMPT.md` (the text pasted into
+Inoreader). Inoreader has no access to any repository file at runtime, so `format.md`,
+`noise-filters.md`, `DECISIONS.md`, and every other repo file were treated as invisible to
+the model. Each fixture below records the **ACTUAL predicted behaviour** of a competent LLM
+following that block verbatim, not the previously-tabulated "expected".
+
+### 5.1 Self-containment verdict — **PASS**
+
+The block is genuinely self-contained. It (a) defines the full persona inline; (b) defines
+the complete output format inline under "## Output format" (first line, WMT block, four
+ordered section headings, the exact per-item line layout, and the COMMERCIAL SIGNAL line
+rule); and (c) contains **no** instruction to "follow" or "see" any external file — the
+only file mention (`digest/format.md is human documentation only`) sits in the surrounding
+prose OUTSIDE the fence, at PROMPT.md line 12, and cannot reach the runtime model. The
+output-format header even states "no repository files are available at runtime." No dangling
+external reference exists inside the block. **No FAIL on self-containment.**
+
+### 5.2 Per-fixture results (actual re-test)
+
+| Fixture | Expected | ACTUAL predicted behaviour (block verbatim) | PASS/FAIL |
+|---|---|---|---|
+| **F01** FSC revises licensing | ACCEPT → Mauritius, likely WMT | Step 1 keeps it (parenthetical "a genuine policy or regulatory change IS in scope" overrides the BoM/routine-ops drop). Step 2: 22 Sep 2026 communiqué date is stated in-body → an "issuance/announcement dated within the article body IS an evidenced event date" and is within the last few days → current. Mauritius. "Why it matters" grounded via persona (ARIE is the FSC-regulated payment intermediary named in the block) without asserting unstated ARIE facts. Likely WMT. | **PASS** |
+| **F02** BoM T-bill auction | REJECT | Matches Step 1 routine-ops list ("treasury bill … auctions", "weekly statistical 'results:'"), no policy change → rejected. | **PASS** |
+| **F03** Procurement EoI | REJECT | Matches "expression of interest / registration of suppliers / invitation to bid / prequalification" → rejected. | **PASS** |
+| **F04** FATF delist, event Oct 2024 | REJECT (C1) | Step 2: event date Oct 2024 evidenced in body, ~2 yr old → older than "roughly the last few days" and merely republished → rejected. | **PASS** |
+| **F05a/b** AMLA Chair (2 publishers) | MERGE → one | Step 3 explicitly "treat an abbreviation and its full name as the same body, e.g. 'AMLA' = 'EU anti-money-laundering authority'"; shared event word (Chair appointment), within 3 days → merged to one story, primary link kept, corroboration noted. | **PASS** |
+| **F06a/b** FSC → firm A vs firm B | DO NOT MERGE | Step 3: "the specific subject entity must also match … Two different firms each getting an FSC licence … are separate stories." Company A ≠ Company B → two stories. | **PASS** |
+| **F07a** Company C African expansion + treasury | ACCEPT + COMMERCIAL SIGNAL | Step 6: (1) named entity Company C; (2) trigger = new foreign operations / market entry; (3) explicit payment+treasury element stated ("cross-border payment and multi-currency treasury needs"). All three met → signal attached; Worldwide. | **PASS** |
+| **F07b** Series B for AI product | REJECT, no signal | Step 1 "generic fundraising" + no specific trigger → rejected; Step 6 not reached. | **PASS** |
+| **F08** Agentic AI + hardware opinion | REJECT | Step 1 "generic AI/SaaS/hardware … topic keyword" with no observable trigger → rejected. | **PASS** |
+| **F09** Actor cast in series | REJECT | Step 1 "Film: items that are ONLY casting, celebrity, or box-office/ratings" → rejected. | **PASS** |
+| **F10** Ireland Section 481 cap rise | ACCEPT → Film & TV | Step 4 Film "INCLUDE … incentive/rebate changes … even if payments are not mentioned"; not casting/box-office. Step 2: Screen Ireland confirmation dated 22 Sep is an in-body announcement → current. "Why it matters" connects the stated incentive change to ARIE's persona (cross-border production-payment/treasury activity) without claiming ARIE already serves Ireland. | **PASS** |
+| **F11** Brent +0.4% | REJECT | Step 1 "Oil & Gas: bare oil-price movement" → rejected. | **PASS** |
+| **F12** Trader D LNG supply, West Africa | ACCEPT → Oil & Gas; **NO** signal | Step 4 accepts (material supply agreement + cross-border corridor). Step 6(3) now requires an "explicit payment, treasury, FX, settlement, correspondent-banking, or documented banking-difficulty element stated in the supplied text (the activity merely being cross-border does NOT satisfy this)." The text states only a cross-border LNG supply deal — no such element → **COMMERCIAL SIGNAL correctly withheld.** The Round-1 FAIL is remediated. | **PASS** |
+| **F13** ARIE launches MU–India corridor | ACCEPT, likely WMT | Direct ARIE mention; 22 Sep announcement in-body → current; accepted, likely WMT, grounded strictly to text. Section placement (Mauritius vs Worldwide) is left to model judgement — either is defensible; not a fixture failure. | **PASS** |
+| **F14** 2026 index / 2025 event | REJECT (C1 trap) | Step 2: publisher index date 2026 is a "bare feed/index timestamp … non-probative"; the in-body launch date is Mar 2025 → evidenced event ~18 mo old → rejected. The stale-as-new trap is closed. | **PASS** |
+
+**Headline pass count: 14/14.**
+
+### 5.3 Targeted probes requested
+
+- **F12 signal (was the Round-1 FAIL):** now correctly withheld. Condition 3's "the activity
+  merely being cross-border does NOT satisfy this" is decisive and unambiguous.
+- **Middle-band recency probe (weeks-old evidenced event):** an item with an in-body event
+  date of ~20 Aug 2026 (5 weeks before today) is *established* but Step 2 now says treat as
+  current "only if … within roughly the last few days … If it is older than that … REJECT."
+  5 weeks ≫ a few days → **rejected**. The recency window closes the middle band that F04/F14
+  (years-old) never exercised. W1 is genuinely fixed.
+- **F05 merge / F06 split:** both explicitly supported by the revised Step 3 (abbreviation =
+  full name for F05; subject-entity-must-match for F06). Neither depends on charitable reading
+  any more.
+- **F01/F10/F12/F13 grounding:** the revised Step 5 permits connecting *stated* article facts
+  to the block's persona while forbidding unstated claims about ARIE's own corridors/clients.
+  All four relevance sentences are expressible without violating grounding.
+
+### 5.4 Fresh adversarial sweep — new weaknesses from the edits
+
+No new FAIL was introduced. The edits are net-positive; the items below are low-severity
+residuals/observations, not fixture failures.
+
+**N1 — Recency window can now over-reject a still-material recent change (SEVERITY: LOW,
+false-negative risk).** The W1 fix trades Round-1 false-positives for a possible
+false-negative: a genuinely significant regulatory/enforcement change evidenced as, say, 8
+days old, first appearing in the feed today, is now rejected as "older than a few days" even
+though management may not have seen it. This is arguably the intended daily-freshness
+behaviour, but it is a real edge the earlier prompt did not have.
+*Optional minimal edit — Step 2, after the recency sentence:* add "— unless it is a still-in-
+effect regulatory/enforcement change whose first appearance in the supplied feed is itself
+recent; in that case keep it and date it by the event." Only adopt if Gate-5 shows real
+misses; otherwise leave as-is (keeps the rule crisp).
+
+**N2 — Commercial-Signal conditions 2 and 3 overlap on "documented banking difficulty"
+(SEVERITY: LOW).** "documented banking/payment difficulty" appears both as a Step 6 trigger
+(condition 2) and as a qualifying element (condition 3). For a banking-difficulty story a
+single stated fact can satisfy both conditions at once, so the "all three" gate effectively
+collapses to two there. This is likely intended (a banking problem is inherently a payments
+angle) and does not affect any fixture, but it is a small soft spot.
+*Optional minimal edit — Step 6:* when the trigger (2) is the banking-difficulty item, require
+condition (3) to be a *distinct* stated payment/treasury/FX/settlement element. Low priority.
+
+**N3 — "roughly the last few days (since the previous weekday digest; Monday covers the
+weekend)" is inherently soft (SEVERITY: LOW, residual).** A Tuesday digest covers only
+Monday, but a Thursday-dated event surfacing Tuesday is ~5 days old — the phrase does not
+say whether that is in or out. Competent models resolve it sensibly; no edit proposed (any
+numeric hard edge risks the F01/F07a same-day items). Tracked as a §3-style residual.
+
+**N4 — F13 section placement remains unspecified (SEVERITY: LOW).** A direct ARIE
+Mauritius–India corridor story fits both Mauritius (local/ARIE) and Worldwide (corridors);
+the block maps Must-Catch topics into the four sections but gives no tie-breaker. Not a
+fixture failure (F13's expected outcome is section-agnostic), but worth one clause if
+consistency matters in the pilot.
+
+### 5.5 Round 2 verdict
+
+- **Pass count: 14/14.**
+- **Self-containment: PASS** (full output format embedded; no runtime dependency on any repo
+  file).
+- **No remaining FAILs.** The single most valuable follow-up is **N1** (guard against the
+  recency window silently dropping still-material recent changes) — and it is optional, to be
+  decided from Gate-5 pilot evidence rather than pre-emptively. The §3 residual limitations
+  (unverifiable true freshness, event-recognition-based dedupe, judgement-bound ARIE
+  relevance) remain inherent to a single no-browsing pass and are accepted for V1.
+
+### Editor decision on Round-2 new weaknesses (N1–N4)
+All LOW, no FAIL. **Deferred to Gate-5 pilot, no prompt edit now:**
+- **N1** (recency window may over-reject a still-material regulatory change surfacing days late): a real tension with "zero regulator misses", but loosening the window now reopens the target-zero stale-as-new risk that W1 closed and that has a demonstrated past failure. Correctness ordering favours keeping the guard; watch in the pilot whether genuine Tier-1 items surface >few days after the event, and add a scoped carve-out only if evidence shows real misses.
+- **N2** (Commercial-Signal cond. 2/3 overlap on "documented banking difficulty"): harmless — a single fact satisfying both still meets the strict gate.
+- **N3** ("last few days" soft for multi-day gaps): inherent to a single pass; Monday-covers-weekend wording already handles the normal gap.
+- **N4** (F13 Mauritius vs Worldwide placement): not a fixture failure; either placement is defensible. Watch in pilot.
